@@ -4,6 +4,8 @@ import { createStackNavigator } from 'react-navigation-stack'
 
 import WelcomeScreen from '../screens/Welcome'
 import EmailSignupScreen from '../screens/EmailSignup'
+import MobileSignupScreen from '../screens/MobileSignup'
+import EmailLoginScreen from '../screens/EmailLogin'
 
 const Index = createStackNavigator(
   {
@@ -13,7 +15,9 @@ const Index = createStackNavigator(
         header: null,
       }
     },
-    EmailSignup: { screen: EmailSignupScreen }
+    EmailSignup: { screen: EmailSignupScreen },
+    MobileSignup: { screen: MobileSignupScreen },
+    EmailLogin: { screen: EmailLoginScreen }
   },
   {
     initialRouteName: 'Welcome',

@@ -26,13 +26,18 @@ const LinksBox = (props: Props) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.signupButton, styles.mobileButton]}
-          onPress={() => {}}
+          onPress={() => navigate('MobileSignup')}
         >
           <Text>Text Sign Up</Text>
         </TouchableOpacity>
       </View>
       <Text style={styles.loginText}>Already a member? {'  '}
-        <Text style={styles.whiteText}>Login</Text>
+        <Text
+          style={styles.whiteText}
+          onPress={() => navigate('EmailLogin')}
+        >
+          Login
+        </Text>
       </Text>
     </View>
   )

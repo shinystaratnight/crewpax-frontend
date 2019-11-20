@@ -11,19 +11,14 @@ import {
 
 import { crewpax } from '../static/entries'
 
-const EmailSignup = (props: any) => {
+const EmailLogin = (props: any) => {
   const { navigate } = props.navigation
 
   return (
     <KeyboardAvoidingView behavior='padding' style={styles.wrapper}>
       <View style={styles.container}>
         <Image source={crewpax} style={styles.crewpaxImage} />
-        <Text style={styles.title}>Create Account</Text>
-        <TextInput
-          style={styles.input}
-          placeholder='Name'
-          onChangeText={ () => {}}
-        />
+        <Text style={styles.title}>Login</Text>
         <TextInput
           style={styles.input}
           placeholder='Email'
@@ -38,15 +33,15 @@ const EmailSignup = (props: any) => {
         <TouchableHighlight
           style={styles.button}
         >
-          <Text style={[styles.whiteText, styles.signupText]}>Sign Up</Text>
+          <Text style={[styles.whiteText, styles.loginText]}>Log In</Text>
         </TouchableHighlight>
-        <Text style={styles.loginText}>
-          Already a member? {'  '}
+        <Text style={styles.signupText}>
+          Not yet a member? {'  '}
           <Text
             style={styles.blackText}
-            onPress={() => navigate('EmailLogin')}
+            onPress={() => navigate('EmailSignup')}
           >
-            Login
+            Sign Up
           </Text>
         </Text>
       </View>
@@ -93,11 +88,11 @@ const styles = StyleSheet.create({
   blackText: {
     color: '#000',
   },
-  signupText: {
+  loginText: {
     fontSize: 15,
     fontWeight: 'bold',
   },
-  loginText: {
+  signupText: {
     fontSize: 15,
     marginTop: 25,
     color: 'rgba(45, 49, 69, .4)',
@@ -106,4 +101,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default EmailSignup
+export default EmailLogin
