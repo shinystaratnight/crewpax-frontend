@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, Button } from 'react-native'
 
-import { commonStyles } from '../styles'
+import { commonStyles } from '../static/styles'
 
 const Home = () => {
   return (
