@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react'
 import { RootStoreContext } from './stores/RootStore'
-import Index from './routes/Index'
-import Home from './routes/Home'
+import IndexNavigator from './routes/Index'
+import HomeNavigator from './routes/Home'
 
 const App = () => {
   const rootStore = useContext(RootStoreContext)
@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     !rootStore.userStore.loggedIn ? 
-      <Index /> : <Home />
+      <IndexNavigator /> : <HomeNavigator />
   )
 }
 

@@ -6,7 +6,13 @@ import {
   TouchableOpacity, 
 } from 'react-native'
 
-const LinksBox = () => {
+interface Props {
+  navigate: any
+}
+
+const LinksBox = (props: Props) => {
+  const {navigate} = props
+
   return (
     <View style={styles.linksContainer}>
       <Text style={styles.description}>By Signing in, you agree to <Text onPress={() => {}} style={styles.termsLink}>Terms & Privacy</Text>.
@@ -14,7 +20,7 @@ const LinksBox = () => {
       <View style={styles.buttonsContainer}>
         <TouchableOpacity
           style={styles.signupButton}
-          onPress={() => {}}
+          onPress={() => navigate('EmailSignup')}
         >
           <Text style={styles.whiteText}>Email Sign Up</Text>
         </TouchableOpacity>

@@ -17,3 +17,5 @@ export const carouselItems = [
 ]
 
 export const logo = require('../assets/images/logo.png')
+export const crewpax = require('../assets/images/crewpax.png')
+export const back = require('../assets/images/back.png')

@@ -13,7 +13,8 @@ import { carouselItems } from '../static/entries'
 import CarouselItem from '../components/welcome/CarouselItem'
 import LinksBox from '../components/welcome/LinksBox'
 
-const Welcome = () => {
+interface Props {}
+const Welcome = (props: any) => {
 
   const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window')
   const ptY = (viewportWidth * 470) / ((viewportHeight) * 375)
@@ -21,6 +22,8 @@ const Welcome = () => {
   const sliderWidth = viewportWidth
   const itemWidth = sliderWidth
   const [activeSlide, setActiveSlide] = useState(0)
+
+  const { navigate } = props.navigation
   
   useEffect(() => {
     return () => {
@@ -35,7 +38,7 @@ const Welcome = () => {
 
   return (
     <>
-      <StatusBar barStyle='light-content' />
+      <StatusBar barStyle='dark-content' />
       <View style={styles.container}>
         <Image 
           source={require('../assets/images/bg.png')} 
@@ -80,7 +83,7 @@ const Welcome = () => {
             carouselRef={carouselRef.current}
             tappableDots={!!carouselRef.current}
           />
-          <View style={{flex: 0.4}}><LinksBox /></View>
+          <View style={{flex: 0.4}}><LinksBox navigate={navigate} /></View>
         </LinearGradient>
       </View>
     </>

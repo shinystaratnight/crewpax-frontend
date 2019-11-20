@@ -1,10 +1,29 @@
 import React from 'react'
-import Welcome from '../screens/Welcome'
+import { createAppContainer } from 'react-navigation'
+import { createStackNavigator } from 'react-navigation-stack'
 
-const Index = () => {
-  return (
-    <Welcome />
-  )
-}
+import WelcomeScreen from '../screens/Welcome'
+import EmailSignupScreen from '../screens/EmailSignup'
 
-export default Index
+const Index = createStackNavigator(
+  {
+    Welcome: { 
+      screen: WelcomeScreen,
+      navigationOptions: {
+        header: null,
+      }
+    },
+    EmailSignup: { screen: EmailSignupScreen }
+  },
+  {
+    initialRouteName: 'Welcome',
+    defaultNavigationOptions: {
+      headerStyle: {
+        borderStyle: 'solid',
+        borderBottomWidth: 0
+      }
+    }
+  }
+)
+
+export default createAppContainer(Index)
