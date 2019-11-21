@@ -4,23 +4,23 @@ import {
   Image, 
   StyleSheet,
   KeyboardAvoidingView,
+  Text,
 } from 'react-native'
 
 import {
   crewpax,
   enterCodeDescription
 } from '../static/entries'
-import { commonStyles } from '../static/styles'
+import { loginStyles } from '../static/styles'
 import Title from '../components/common/Title'
 import Description from '../components/common/Description'
-import Input from '../components/common/Input'
 import Button from '../components/common/Button'
 import Code from '../components/signup/Code'
 
 const ConfirmCode = () => {
   return (
     <KeyboardAvoidingView behavior='padding' style={{}}>
-      <View style={commonStyles.loginContainer}>
+      <View style={loginStyles.container}>
         <Image source={crewpax} />
         <Title
           value="Enter your Code"
@@ -30,9 +30,14 @@ const ConfirmCode = () => {
         />
         <Code />
         <Button
-          value="Request"
+          value="Verify"
         />
       </View>
+      <Text
+        style={[loginStyles.textLink, styles.resendText]}
+      >
+        Send again
+      </Text>
     </KeyboardAvoidingView>
   )
 }
@@ -42,8 +47,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 18,
     paddingTop: 20,
   },
-  crewpaxImage: {
-    
-  }
+  resendText: {
+    textAlign: 'center',
+    color: '#4CD964',
+  },
 })
 export default ConfirmCode

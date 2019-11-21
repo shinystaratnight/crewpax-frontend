@@ -11,6 +11,7 @@ import Button from '../components/common/Button'
 import Title from '../components/common/Title'
 import Input from '../components/common/Input'
 import { crewpax } from '../static/entries'
+import { loginStyles } from '../static/styles'
 
 const EmailLogin = (props: any) => {
   const { navigate } = props.navigation
@@ -34,7 +35,7 @@ const EmailLogin = (props: any) => {
           onChangeText={ () => {}}
         />
         <Text
-          style={styles.forgotPassword}
+          style={[loginStyles.textLink, styles.forgotPassword]}
           onPress={() => navigate('ForgotPassword')}
         >
           Forgot your password?
@@ -42,7 +43,9 @@ const EmailLogin = (props: any) => {
         <Button
           value="Log In"
         />
-        <Text style={styles.signupText}>
+        <Text
+          style={[loginStyles.textLink, styles.signupText]}
+        >
           Not yet a member? {'  '}
           <Text
             style={styles.black}
@@ -68,16 +71,11 @@ const styles = StyleSheet.create({
   },
   forgotPassword: {
     color: '#4CD964',
-    marginBottom: 15,
-    marginTop: 10,
     textAlign: 'right',
   },
   signupText: {
-    fontSize: 15,
-    marginTop: 15,
     color: 'rgba(45, 49, 69, .4)',
     textAlign: 'center',
-    fontWeight: '500',
   },
 })
 

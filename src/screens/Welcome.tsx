@@ -38,7 +38,7 @@ const Welcome = (props: any) => {
 
   return (
     <>
-      <StatusBar barStyle='dark-content' />
+      <StatusBar barStyle='light-content' />
       <View style={styles.container}>
         <Image 
           source={require('../assets/images/bg.png')} 

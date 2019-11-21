@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#4CD964',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingVertical: 18,
+    paddingVertical: 15,
     borderRadius: 3,
     marginVertical: 10,
     

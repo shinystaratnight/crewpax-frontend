@@ -15,7 +15,10 @@ const LinksBox = (props: Props) => {
 
   return (
     <View style={styles.linksContainer}>
-      <Text style={styles.description}>By Signing in, you agree to <Text onPress={() => {}} style={styles.termsLink}>Terms & Privacy</Text>.
+      <Text style={styles.description}>By Signing in, you agree to {' '}
+        <Text onPress={() => {}} style={styles.termsLink}>
+          Terms & Privacy
+        </Text>.
       </Text>
       <View style={styles.buttonsContainer}>
         <TouchableOpacity

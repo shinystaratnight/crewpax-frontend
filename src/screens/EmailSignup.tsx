@@ -11,14 +11,14 @@ import Button from '../components/common/Button'
 import Title from '../components/common/Title'
 import Input from '../components/common/Input'
 import { crewpax } from '../static/entries'
-import { commonStyles } from '../static/styles'
+import { loginStyles } from '../static/styles'
 
 const EmailSignup = (props: any) => {
   const { navigate } = props.navigation
 
   return (
     <KeyboardAvoidingView behavior='padding' style={styles.wrapper}>
-      <View style={commonStyles.loginContainer}>
+      <View style={loginStyles.container}>
         <Image source={crewpax} />
         <Title value="Create Account" />
         <Input
@@ -38,7 +38,7 @@ const EmailSignup = (props: any) => {
           value="Sign Up"
           onPress={() => navigate('ConfirmCode')}
         />
-        <Text style={styles.loginText}>
+        <Text style={[loginStyles.textLink, styles.loginText]}>
           Already a member? {'  '}
           <Text
             style={styles.black}
@@ -63,11 +63,8 @@ const styles = StyleSheet.create({
     color: '#000',
   },
   loginText: {
-    fontSize: 15,
-    marginTop: 15,
     color: 'rgba(45, 49, 69, .4)',
     textAlign: 'center',
-    fontWeight: '500',
   },
 })
 

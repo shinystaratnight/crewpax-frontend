@@ -1,13 +1,15 @@
 import React from 'react'
-import { View, Text, Button } from 'react-native'
-
-import { commonStyles } from '../static/styles'
+import {
+  View,
+  Text,
+  Button
+} from 'react-native'
 
 const Home = () => {
   return (
-    <View style={commonStyles.container}>
+    <View>
       <Text>Home Screen</Text>
-      <Button title="Sign Out" onPress={() => { }} />
+      <Button title="Sign Out" onPress={() => {}} />
     </View>
   )
 }
