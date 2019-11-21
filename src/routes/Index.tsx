@@ -6,6 +6,8 @@ import WelcomeScreen from '../screens/Welcome'
 import EmailSignupScreen from '../screens/EmailSignup'
 import MobileSignupScreen from '../screens/MobileSignup'
 import EmailLoginScreen from '../screens/EmailLogin'
+import ForgotPasswordScreen from '../screens/ForgotPassword'
+import ConfirmCodeScreen from '../screens/ConfirmCode'
 
 const Index = createStackNavigator(
   {
@@ -17,14 +19,16 @@ const Index = createStackNavigator(
     },
     EmailSignup: { screen: EmailSignupScreen },
     MobileSignup: { screen: MobileSignupScreen },
-    EmailLogin: { screen: EmailLoginScreen }
+    EmailLogin: { screen: EmailLoginScreen },
+    ForgotPassword: { screen: ForgotPasswordScreen },
+    ConfirmCode: { screen: ConfirmCodeScreen },
   },
   {
     initialRouteName: 'Welcome',
     defaultNavigationOptions: {
       headerStyle: {
         borderStyle: 'solid',
-        borderBottomWidth: 0
+        borderBottomWidth: 0,
       }
     }
   }

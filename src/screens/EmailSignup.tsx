@@ -5,45 +5,43 @@ import {
   Image,
   StyleSheet,
   KeyboardAvoidingView,
-  TextInput,
-  TouchableHighlight
 } from 'react-native'
 
+import Button from '../components/common/Button'
+import Title from '../components/common/Title'
+import Input from '../components/common/Input'
 import { crewpax } from '../static/entries'
+import { commonStyles } from '../static/styles'
 
 const EmailSignup = (props: any) => {
   const { navigate } = props.navigation
 
   return (
     <KeyboardAvoidingView behavior='padding' style={styles.wrapper}>
-      <View style={styles.container}>
-        <Image source={crewpax} style={styles.crewpaxImage} />
-        <Text style={styles.title}>Create Account</Text>
-        <TextInput
-          style={styles.input}
+      <View style={commonStyles.loginContainer}>
+        <Image source={crewpax} />
+        <Title value="Create Account" />
+        <Input
           placeholder='Name'
           onChangeText={ () => {}}
         />
-        <TextInput
-          style={styles.input}
+        <Input
           placeholder='Email'
           onChangeText={ () => {}}
         />
-        <TextInput
-          style={styles.input}
+        <Input
           placeholder='Password'
           secureTextEntry={true}
           onChangeText={ () => {}}
         />
-        <TouchableHighlight
-          style={styles.button}
-        >
-          <Text style={[styles.whiteText, styles.signupText]}>Sign Up</Text>
-        </TouchableHighlight>
+        <Button
+          value="Sign Up"
+          onPress={() => navigate('ConfirmCode')}
+        />
         <Text style={styles.loginText}>
           Already a member? {'  '}
           <Text
-            style={styles.blackText}
+            style={styles.black}
             onPress={() => navigate('EmailLogin')}
           >
             Login
@@ -61,45 +59,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 18,
     paddingTop: 20,
   },
-  crewpaxImage: {
-  },
-  title: {
-    fontSize: 34,
-    lineHeight: 41,
-    letterSpacing: 0.41,
-    fontWeight: 'bold',
-    marginVertical: 30,
-  },
-  input: {
-    fontSize: 15,
-    lineHeight: 18,
-    color: 'rgba(45,49,69,0.4)',
-    borderBottomWidth: 1,
-    paddingVertical: 15,
-    borderBottomColor: '#CACAD4',
-    marginBottom: 10,
-  },
-  button: {
-    backgroundColor: '#4CD964',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: 18,
-    borderRadius: 3,
-    marginVertical: 5,
-  },
-  whiteText: {
-    color: '#FFF',
-  },
-  blackText: {
+  black: {
     color: '#000',
-  },
-  signupText: {
-    fontSize: 15,
-    fontWeight: 'bold',
   },
   loginText: {
     fontSize: 15,
-    marginTop: 25,
+    marginTop: 15,
     color: 'rgba(45, 49, 69, .4)',
     textAlign: 'center',
     fontWeight: '500',
