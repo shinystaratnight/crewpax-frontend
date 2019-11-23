@@ -11,7 +11,6 @@ const Code = () => {
   return (
     <View style={styles.codeContainer}>
       {itemArray.map((_: any, index: any) => {
-        console.log(index)
         return (
           <TextInput
             key={index}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import {
   View,
   KeyboardAvoidingView,
@@ -20,7 +20,9 @@ const ForgotPassword = () => {
   return (
     <KeyboardAvoidingView behavior='padding' style={{}}>
       <View style={loginStyles.container}>
-        <Image source={crewpax} />
+        <Image
+          source={crewpax}
+        />
         <Title
           value="Forgot Password?"
         />
@@ -29,6 +31,7 @@ const ForgotPassword = () => {
         />
         <Input
           placeholder="Email"
+          onChangeText={() => {}}
         />
         <Button
           value="Request"

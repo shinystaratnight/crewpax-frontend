@@ -1,12 +1,17 @@
-import React from 'react'
+import React, {
+  useContext,
+  useRef
+} from 'react'
 import {
-  View,
   Text,
   Image,
   StyleSheet,
   KeyboardAvoidingView,
+  SafeAreaView,
 } from 'react-native'
+import { } from 'mobx-react'
 
+import { RootStoreContext } from '../stores/RootStore'
 import Button from '../components/common/Button'
 import Title from '../components/common/Title'
 import Input from '../components/common/Input'
@@ -14,11 +19,17 @@ import { crewpax } from '../static/entries'
 import { loginStyles } from '../static/styles'
 
 const EmailLogin = (props: any) => {
+  const rootStore = useContext(RootStoreContext)
+  const emailRef = useRef()
   const { navigate } = props.navigation
+  const emailError = true
+
+  const login = () => {
+  }
 
   return (
     <KeyboardAvoidingView behavior='padding' style={styles.wrapper}>
-      <View style={styles.container}>
+      <SafeAreaView style={loginStyles.container}>
         <Image
           source={crewpax}
         />
@@ -27,7 +38,9 @@ const EmailLogin = (props: any) => {
         />
         <Input
           placeholder='Email'
+          ref={emailRef}
           onChangeText={ () => {}}
+          style={emailError ? styles.error : undefined}
         />
         <Input
           placeholder='Password'
@@ -41,6 +54,7 @@ const EmailLogin = (props: any) => {
           Forgot your password?
         </Text>
         <Button
+          onPress={login}
           value="Log In"
         />
         <Text
@@ -54,17 +68,16 @@ const EmailLogin = (props: any) => {
             Sign Up
           </Text>
         </Text>
-      </View>
+      </SafeAreaView>
     </KeyboardAvoidingView>
   )
 }
 
 const styles = StyleSheet.create({
-  wrapper: {
-  },
-  container: {
-    paddingHorizontal: 18,
-    paddingTop: 20,
+  wrapper: {},
+  error: {
+    borderBottomColor: '#F00',
+    color: '#F00',
   },
   black: {
     color: '#000',

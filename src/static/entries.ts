@@ -21,6 +21,7 @@ export const crewpax = require('../assets/images/crewpax.png')
 export const back = require('../assets/images/back.png')
 export const chevron = require('../assets/images/chevron.png')
 
+export const serverUrl = 'localhost:3000/'
 export const login = 'Log In'
 export const signup = 'Sign Up'
 export const mobileSignupDescription = 'Tap request to verify your account through text. An SMS will be sent to verify your account with a 6 digit code you will need to add on the next screen. Standard text message or data rates may apply.'

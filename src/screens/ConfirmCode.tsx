@@ -1,10 +1,10 @@
 import React from 'react'
 import { 
-  View, 
   Image, 
   StyleSheet,
   KeyboardAvoidingView,
   Text,
+  SafeAreaView,
 } from 'react-native'
 
 import {
@@ -20,7 +20,7 @@ import Code from '../components/signup/Code'
 const ConfirmCode = () => {
   return (
     <KeyboardAvoidingView behavior='padding' style={{}}>
-      <View style={loginStyles.container}>
+      <SafeAreaView style={loginStyles.container}>
         <Image source={crewpax} />
         <Title
           value="Enter your Code"
@@ -32,7 +32,7 @@ const ConfirmCode = () => {
         <Button
           value="Verify"
         />
-      </View>
+      </SafeAreaView>
       <Text
         style={[loginStyles.textLink, styles.resendText]}
       >
@@ -43,10 +43,6 @@ const ConfirmCode = () => {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 18,
-    paddingTop: 20,
-  },
   resendText: {
     textAlign: 'center',
     color: '#4CD964',

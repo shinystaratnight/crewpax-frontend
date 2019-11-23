@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 export const loginStyles = StyleSheet.create({
   container: {
     paddingHorizontal: 18,
-    paddingTop: 20,
+    marginTop: 20,
   },
   textLink: {
     fontSize: 15,
